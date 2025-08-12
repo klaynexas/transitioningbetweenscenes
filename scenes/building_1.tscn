@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=4 uid="uid://cwy56nb0juoao"]
+
+[ext_resource type="TileSet" uid="uid://gc8v314g242v" path="res://tile_sets/main.tres" id="1_gqmnm"]
+[ext_resource type="PackedScene" uid="uid://bqkm87h8d17sg" path="res://scenes/transition_door.tscn" id="3_a2ulf"]
+[ext_resource type="PackedScene" uid="uid://dvcc51ec3bcmq" path="res://scenes/Area2.tscn" id="4_4v0nk"]
+
+[node name="Building1" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+//3/AAAJAAgAAAAAAAAAAAAJAAgAAAAAAAEAAAAJAAkAAAAAAAIAAAAJAAoAAAAAAAMAAAAJAAsAAAAAAAQAAAAJAAwAAAABAAAAAAAKAAgAAAABAAEAAAAKAAkAAAABAAIAAAAKAAoAAAABAAMAAAAKAAsAAAABAAQAAAAKAAwAAAACAAAAAAALAAgAAAACAAEAAAALAAkAAAACAAIAAAALAAoAAAACAAMAAAALAAsAAAACAAQAAAALAAwAAAADAAAAAAAMAAgAAAADAAEAAAAMAAkAAAADAAIAAAAMAAoAAAADAAMAAAAMAAsAAAADAAQAAAAMAAwAAAAEAAAAAAANAAgAAAAEAAEAAAANAAkAAAAEAAIAAAANAAoAAAAEAAMAAAANAAsAAAAEAAQAAAANAAwAAAA=")
+tile_set = ExtResource("1_gqmnm")
+
+[node name="TransitionDoor" parent="." instance=ExtResource("3_a2ulf")]
+position = Vector2(80, 139)
+next_area = ExtResource("4_4v0nk")

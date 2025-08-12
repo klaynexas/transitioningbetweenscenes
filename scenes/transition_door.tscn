@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqkm87h8d17sg"]
+
+[ext_resource type="Script" uid="uid://btxk0h03stevy" path="res://scripts/transition_door.gd" id="1_fe4ri"]
+[ext_resource type="PackedScene" uid="uid://de8haugpbdyor" path="res://scenes/tranisition.tscn" id="2_bqq7t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al5oy"]
+size = Vector2(23, 22)
+
+[node name="TransitionDoor" type="Node2D"]
+script = ExtResource("1_fe4ri")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="TranistionArea" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_al5oy")
+
+[node name="SceneTransition" parent="." instance=ExtResource("2_bqq7t")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="fade_in_animation_finished" from="SceneTransition" to="." method="_on_scene_transition_fade_in_animation_finished"]
