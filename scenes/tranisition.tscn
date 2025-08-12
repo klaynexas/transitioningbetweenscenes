@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://de8haugpbdyor"]
+
+[ext_resource type="Script" uid="uid://cqxj6qn3mtqwr" path="res://scripts/tranisition.gd" id="1_2dq45"]
+
+[sub_resource type="Animation" id="Animation_2dq45"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColor:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m4hpc"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColor:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xqnnw"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColor:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0.0117647)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nmhs1"]
+_data = {
+&"RESET": SubResource("Animation_2dq45"),
+&"fade_in": SubResource("Animation_m4hpc"),
+&"fade_out": SubResource("Animation_xqnnw")
+}
+
+[node name="SceneTransition" type="Node2D"]
+script = ExtResource("1_2dq45")
+
+[node name="TransitionColor" type="ColorRect" parent="."]
+offset_left = -630.0
+offset_top = -344.0
+offset_right = 643.0
+offset_bottom = 390.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nmhs1")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

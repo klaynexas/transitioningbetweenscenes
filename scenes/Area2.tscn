@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=4 uid="uid://dvcc51ec3bcmq"]
+
+[ext_resource type="TileSet" uid="uid://gc8v314g242v" path="res://tile_sets/main.tres" id="1_cplc2"]
+[ext_resource type="Script" uid="uid://d2ki1n1n5uxdo" path="res://scripts/area_2.gd" id="1_fbm8x"]
+[ext_resource type="PackedScene" uid="uid://5lebhchub728" path="res://scenes/player.tscn" id="2_72r2t"]
+[ext_resource type="PackedScene" uid="uid://de8haugpbdyor" path="res://scenes/tranisition.tscn" id="4_vh7t0"]
+
+[node name="Area2" type="Node2D"]
+script = ExtResource("1_fbm8x")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAIAAAAAAAUAAAABAAAAAAABAAMAAAABAAEAAAABAAQAAAABAAIAAAABAAUAAAACAAAAAAACAAMAAAACAAEAAAACAAQAAAACAAIAAAACAAUAAAA=")
+tile_set = ExtResource("1_cplc2")
+
+[node name="Player" parent="." instance=ExtResource("2_72r2t")]
+position = Vector2(48, 48)
+
+[node name="SceneTransition" parent="." instance=ExtResource("4_vh7t0")]
