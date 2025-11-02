@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var transition_color: Node = $TransitionColor
+@onready var transition_color: Node = $CanvasLayer/TransitionColor
 @onready var animation_player: Node = $AnimationPlayer
 
 const FADE_IN_ANIMATION: StringName = "fade_in"

@@ -10,6 +10,7 @@ size = Vector2(23, 22)
 script = ExtResource("1_fe4ri")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="TranistionArea" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_al5oy")

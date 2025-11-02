@@ -13,3 +13,9 @@ tile_set = ExtResource("1_gqmnm")
 [node name="TransitionDoor" parent="." instance=ExtResource("3_a2ulf")]
 position = Vector2(80, 139)
 next_area = ExtResource("4_4v0nk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(15, 52, 14, 152, 63, 152, 63, 125, 98, 125, 97, 152, 146, 152, 146, 52, 80, 16)

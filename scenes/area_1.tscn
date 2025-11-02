@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://cyi10egpw6dwe"]
+[gd_scene load_steps=5 format=4 uid="uid://cyi10egpw6dwe"]
 
 [ext_resource type="Script" uid="uid://dp8h1ebsbs7di" path="res://scripts/area_1.gd" id="1_0bq5r"]
 [ext_resource type="TileSet" uid="uid://gc8v314g242v" path="res://tile_sets/main.tres" id="1_pvmkf"]
-[ext_resource type="PackedScene" uid="uid://bqkm87h8d17sg" path="res://scenes/transition_door.tscn" id="3_al5oy"]
-[ext_resource type="PackedScene" uid="uid://dvcc51ec3bcmq" path="res://scenes/Area2.tscn" id="4_aq3wa"]
 [ext_resource type="PackedScene" uid="uid://5lebhchub728" path="res://scenes/player.tscn" id="5_al5oy"]
 [ext_resource type="PackedScene" uid="uid://cwy56nb0juoao" path="res://scenes/building_1.tscn" id="6_aq3wa"]
 
@@ -18,12 +16,11 @@ tile_set = ExtResource("1_pvmkf")
 tile_map_data = PackedByteArray("AAAEAP3/AAAJAAgAAAAEAP7/AAAJAAkAAAAEAP//AAAJAAoAAAAEAAAAAAAJAAsAAAAEAAEAAAAJAAwAAAAFAP3/AAAKAAgAAAAFAP7/AAAKAAkAAAAFAP//AAAKAAoAAAAFAAAAAAAKAAsAAAAFAAEAAAAKAAwAAAAGAP3/AAALAAgAAAAGAP7/AAALAAkAAAAGAP//AAALAAoAAAAGAAAAAAALAAsAAAAGAAEAAAALAAwAAAAHAP3/AAAMAAgAAAAHAP7/AAAMAAkAAAAHAP//AAAMAAoAAAAHAAAAAAAMAAsAAAAHAAEAAAAMAAwAAAAIAP3/AAANAAgAAAAIAP7/AAANAAkAAAAIAP//AAANAAoAAAAIAAAAAAANAAsAAAAIAAEAAAANAAwAAAA=")
 tile_set = ExtResource("1_pvmkf")
 
-[node name="TransitionDoor" parent="." instance=ExtResource("3_al5oy")]
-position = Vector2(208, 43)
-next_area = ExtResource("4_aq3wa")
+[node name="Building1" parent="." instance=ExtResource("6_aq3wa")]
+position = Vector2(78, 78)
+
+[node name="Building2" parent="." instance=ExtResource("6_aq3wa")]
+position = Vector2(-538, 32)
 
 [node name="Player" parent="." instance=ExtResource("5_al5oy")]
 position = Vector2(16, 16)
-
-[node name="Building1" parent="." instance=ExtResource("6_aq3wa")]
-position = Vector2(78, 78)
